@@ -1,12 +1,10 @@
-name: Create a sandbox instance
-  hosts: localhost
-  gather_facts: False
+name: Update timezone and hostname
+  hosts: all
+  gather_facts: True
   vars:
-    keypair: us-jhooker-aws-admin
-    instance_type: t2.micro
-    security_group: ansible-security-group
-    image: ami-0520e698dd500b1d1
-    region: us-east-2
+    hostname: somebloke1-testhostname
+    tz: Antarctica/McMurdo
+    token: 
   tasks:
     - name: Launch instance
       ec2:
